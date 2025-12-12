@@ -1,11 +1,45 @@
+import os
+from enum import global_enum
+
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QDialog, QPushButton, QScrollArea, QLineEdit, QFrame)
 from PyQt5.QtCore import (Qt, pyqtSignal, QTimer, QPropertyAnimation,
                           QEasingCurve, QRect, QPoint, QParallelAnimationGroup)
-from PyQt5.QtGui import QCursor
+from PyQt5.QtGui import QCursor, QPixmap
 
 from .ui_shared import GlassFrame, FlowLayout
 from .core import Plant
+
+
+def get_plant_image(plant_id):
+    """
+    Robust helper to find plant images.
+    Checks relative to the script location (src/../assets) and current working directory.
+    """
+    # 1. Determine the directory where this file (views.py) lives
+    current_file_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 2. Determine project root (assuming views.py is in src/)
+    project_root = os.path.dirname(current_file_dir)
+
+    # 3. Define potential paths to the 'assets' folder
+    candidate_dirs = [
+        os.path.join(project_root, 'assets'),  # Project root assets (best practice)
+        os.path.join(current_file_dir, 'assets'),  # Assets inside src
+        os.path.join(os.getcwd(), 'assets'),  # Assets in current working dir
+        'assets'  # Relative fallback
+    ]
+
+    # 4. Search for the image
+    extensions = ['.png', '.jpg', '.jpeg']
+
+    for folder in candidate_dirs:
+        if os.path.isdir(folder):
+            for ext in extensions:
+                full_path = os.path.join(folder, f"{plant_id}{ext}")
+                if os.path.exists(full_path):
+                    return full_path
+    return None
 
 
 class PlantCard(GlassFrame):
@@ -123,16 +157,16 @@ class PlantCard(GlassFrame):
             ".GlassFrame { background-color: rgba(255, 255, 255, 30); border: 1px solid rgba(255, 255, 255, 60); border-radius: 16px; }")
         super().leaveEvent(event)
 
-
 class DetailModal(QDialog):
     def __init__(self, plant: Plant, parent=None, start_geometry=None):
+
         super().__init__(parent)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Dialog)
         self.setAttribute(Qt.WA_TranslucentBackground)
 
         self.start_geometry = start_geometry
-        self.target_width = 400
-        self.target_height = 500
+        self.target_width = 450
+        self.target_height = 600
         self.resize(self.target_width, self.target_height)
 
         container = GlassFrame(self)
@@ -141,11 +175,12 @@ class DetailModal(QDialog):
         layout_wrap.addWidget(container)
 
         container.setStyleSheet(
-            ".GlassFrame { background-color: rgba(20, 30, 40, 220); border: 1px solid rgba(255,255,255,50); border-radius: 20px; }")
+            ".GlassFrame { background-color: rgba(20, 30, 40, 230); border: 1px solid rgba(255,255,255,50); border-radius: 20px; }")
 
         layout = QVBoxLayout(container)
         layout.setContentsMargins(30, 30, 30, 30)
 
+        # Header with Close Button
         close_btn = QPushButton("×")
         close_btn.setFixedSize(30, 30)
         close_btn.clicked.connect(self.close_animated)
@@ -157,9 +192,30 @@ class DetailModal(QDialog):
         header = QHBoxLayout()
         header.addStretch()
         header.addWidget(close_btn)
+        layout.addLayout(header)
 
+        # Image for Modal
+        img_label = QLabel()
+        img_label.setFixedSize(390, 220)
+        img_label.setAlignment(Qt.AlignCenter)
+        img_label.setStyleSheet("background-color: rgba(0,0,0,0.3); border-radius: 10px;")
+
+        # Load Image logic for Modal
+        img_path = get_plant_image(plant.id)
+
+        if img_path:
+            pix = QPixmap(img_path)
+            if not pix.isNull():
+                scaled = pix.scaled(img_label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                img_label.setPixmap(scaled)
+
+        layout.addWidget(img_label, alignment=Qt.AlignCenter)
+        layout.addSpacing(15)
+
+        # Text Info
         name = QLabel(plant.name)
         name.setStyleSheet("font-size: 28px; font-weight: bold; color: white; margin-bottom: 5px;")
+        name.setWordWrap(True)
 
         sci = QLabel(plant.scientific_name)
         sci.setStyleSheet("font-size: 16px; font-style: italic; color: #aaa; margin-bottom: 15px;")
@@ -181,7 +237,6 @@ class DetailModal(QDialog):
         stats_layout.addWidget(make_stat("CO₂ Absorb", f"{plant.co2_data} mg/day"))
         stats_layout.addWidget(make_stat("Rating", f"{plant.rating}/5"))
 
-        layout.addLayout(header)
         layout.addWidget(name)
         layout.addWidget(sci)
         layout.addWidget(stats_box)
