@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
 from PyQt5.QtCore import (Qt, pyqtSignal, QTimer, QPropertyAnimation,
                           QEasingCurve, QRect, QPoint, QParallelAnimationGroup)
 from PyQt5.QtGui import QCursor, QPixmap
+from PyQt5.QtGui import QCursor, QColor
 
 from .ui_shared import GlassFrame, FlowLayout
 from .core import Plant
@@ -50,6 +51,9 @@ class PlantCard(GlassFrame):
         self.plant = plant
         self.setFixedSize(198, 180)
         self.setCursor(QCursor(Qt.PointingHandCursor))
+
+        # Disable shadow for performance with large datasets
+        self.setGraphicsEffect(None)
 
         layout = QVBoxLayout(self)
         layout.setContentsMargins(15, 15, 15, 15)
@@ -100,49 +104,24 @@ class PlantCard(GlassFrame):
             clean_str = str(data).split()[0]
             val = float(clean_str)
 
-            # Colors: Best -> Worst
-            c_best = ("#145A32", "white")
-            c_good = ("#27AE60", "white")
-            c_mid = ("#F1C40F", "black")
-            c_low = ("#E67E22", "white")
-            c_bad = ("#C0392B", "white")
+            c_best, c_good, c_mid, c_low, c_bad = ("#145A32", "#27AE60", "#F1C40F", "#E67E22", "#C0392B")
 
             if is_o2:
-                if val >= 4.0:
-                    bg, fg = c_best
-                elif val >= 3.0:
-                    bg, fg = c_good
-                elif val >= 2.0:
-                    bg, fg = c_mid
-                elif val >= 1.0:
-                    bg, fg = c_low
-                else:
-                    bg, fg = c_bad
+                col = c_best if val >= 4.0 else c_good if val >= 3.0 else c_mid if val >= 2.0 else c_low if val >= 1.0 else c_bad
             else:
-                if val >= 2.8:
-                    bg, fg = c_best
-                elif val >= 2.1:
-                    bg, fg = c_good
-                elif val >= 1.4:
-                    bg, fg = c_mid
-                elif val >= 0.7:
-                    bg, fg = c_low
-                else:
-                    bg, fg = c_bad
+                col = c_best if val >= 2.8 else c_good if val >= 2.1 else c_mid if val >= 1.4 else c_low if val >= 0.7 else c_bad
 
-            return f"background-color: {bg}; color: {fg}; border-radius: 4px; font-weight: bold; font-size: 10px;"
-
+            text_col = "black" if col == "#F1C40F" else "white"
+            return f"background-color: {col}; color: {text_col}; border-radius: 4px; font-weight: bold; font-size: 10px;"
         except (ValueError, TypeError, IndexError):
-            # Fallback for legacy text data
             d = str(data).lower()
-            if "very high" in d:
-                return "background-color: #145A32; color: white; border-radius: 4px; font-weight: bold; font-size: 10px;"
+            if "very high" in d: return "background-color: #145A32; color: white; border-radius: 4px;"
             if "high" in d:
-                return "background-color: #2ECC71; color: black; border-radius: 4px; font-weight: bold; font-size: 10px;"
+                return "background-color: #2ECC71; color: black; border-radius: 4px;"
             elif "moderate" in d:
-                return "background-color: #F1C40F; color: black; border-radius: 4px; font-weight: bold; font-size: 10px;"
+                return "background-color: #F1C40F; color: black; border-radius: 4px;"
             else:
-                return "background-color: #E74C3C; color: white; border-radius: 4px; font-weight: bold; font-size: 10px;"
+                return "background-color: #E74C3C; color: white; border-radius: 4px;"
 
     def mousePressEvent(self, event):
         self.clicked.emit(self.plant, self)
@@ -316,7 +295,9 @@ class BaseTab(QWidget):
         self.scroll = QScrollArea()
         self.scroll.setWidgetResizable(True)
         self.content_widget = QWidget()
+
         self.flow_layout = FlowLayout(self.content_widget)
+
         self.scroll.setWidget(self.content_widget)
         self.layout.addWidget(self.scroll)
 
@@ -332,13 +313,7 @@ class BaseTab(QWidget):
         raise NotImplementedError
 
     def populate_grid(self, plants):
-        while self.flow_layout.count():
-            item = self.flow_layout.takeAt(0)
-            if item is None: break
-            widget = item.widget()
-            if widget:
-                widget.setParent(None)
-                widget.deleteLater()
+        self._clear_layout()
 
         for p in plants:
             card = PlantCard(p)
@@ -346,12 +321,21 @@ class BaseTab(QWidget):
             self.flow_layout.addWidget(card)
 
         self.content_widget.updateGeometry()
+        self.status_label.setText(f"Found {len(plants)} plants.")
+
+    def _clear_layout(self):
+        if self.content_widget.layout():
+            layout = self.content_widget.layout()
+            while layout.count():
+                item = layout.takeAt(0)
+                if item.widget():
+                    item.widget().setParent(None)
+                    item.widget().deleteLater()
 
     def open_detail(self, plant, card_widget):
         main_window = self.window()
         pos = card_widget.mapTo(main_window, QPoint(0, 0))
         start_geo = QRect(pos, card_widget.size())
-
         dialog = DetailModal(plant, main_window, start_geometry=start_geo)
         dialog.exec_()
 
@@ -359,18 +343,52 @@ class BaseTab(QWidget):
 class HomeTab(BaseTab):
     def __init__(self, data_manager):
         super().__init__(data_manager)
+
+        self.setObjectName("HomeTab")
+        self.setAttribute(Qt.WA_StyledBackground, True)
+
+        self.setStyleSheet("""
+            #HomeTab {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #093637, stop:1 #44a08d);
+            }
+        """)
+
         self.search_bar.setPlaceholderText("Search top recommendations...")
+
+        QWidget().setLayout(self.flow_layout)
+        self.list_layout = QVBoxLayout(self.content_widget)
+        self.list_layout.setAlignment(Qt.AlignTop)
+        self.list_layout.setSpacing(10)
+
         QTimer.singleShot(100, self.perform_search)
 
     def perform_search(self):
         text = self.search_bar.text()
         if not text:
             results = self.dm.get_top_10()
-            self.status_label.setText("Top 10 Recommendations")
+            self.status_label.setText("Top 10 Leaderboard")
         else:
             results = self.dm.search(text)
             self.status_label.setText(f"Found {len(results)} matches.")
-        self.populate_grid(results)
+
+        self.populate_leaderboard(results)
+
+    def populate_leaderboard(self, plants):
+        while self.list_layout.count():
+            item = self.list_layout.takeAt(0)
+            if item.widget():
+                item.widget().setParent(None)
+                item.widget().deleteLater()
+
+        for idx, p in enumerate(plants):
+            row = RankedPlantRow(p, rank=idx + 1)
+            row.clicked.connect(self.open_detail)
+            self.list_layout.addWidget(row)
+
+        self.content_widget.updateGeometry()
+
+    def populate_grid(self, plants):
+        self.populate_leaderboard(plants)
 
 
 class ListTab(BaseTab):
@@ -382,16 +400,4 @@ class ListTab(BaseTab):
     def perform_search(self):
         text = self.search_bar.text()
         results = self.dm.search_all(text)
-
-        # Safety limit for rendering
-        MAX_ITEMS = len(results)
-
-        if len(results) == 0: MAX_ITEMS = 0
-
-        if len(results) > MAX_ITEMS:
-            display_results = results[:MAX_ITEMS]
-            self.status_label.setText(f"Displaying top {MAX_ITEMS} of {len(results)} plants. Please refine search.")
-            self.populate_grid(display_results)
-        else:
-            self.status_label.setText(f"Found {len(results)} plants.")
-            self.populate_grid(results)
+        self.populate_grid(results)
