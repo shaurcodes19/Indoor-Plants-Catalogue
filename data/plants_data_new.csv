@@ -1,0 +1,71 @@
+Plant ID,Plant Name,Plant Scientific Name,Plant O2 Release Data,Plant CO Absorb Data,Short Description of the plant,Recommendation Rating out of 5
+1,Chlorophytum,Saintpaulia ionantha,0.61,1.11,"Graceful palm tree, brings tropical elegance.",3.7
+2,Boston Fern,Yucca elephantipes,3.83,2.0,"Aroid plant, glossy green leaves.",4.1
+3,Spider Plant,Crassula ovata,1.48,1.87,"Produces long arching leaves with white stripes, very resilient.",4.3
+4,Oncidium,Sansevieria trifasciata,3.66,1.58,"Culinary herb, aromatic and medicinal.",4.4
+5,Monstera Deliciosa,Petunia,3.64,1.32,"Spring flowering bulb, produces vibrant colored flowers.",3.8
+6,Spathiphyllum,Nephrolepis exaltata,0.92,0.52,"Colorful foliage plant, dramatic leaf patterns.",4.4
+7,Fiddle Leaf Fig,Origanum majorana,2.91,3.41,"Delicate flowers in clusters, elegant trailing form.",3.6
+8,Amaryllis,Dieffenbachia seguine,3.28,3.04,"Variegated leaves, elegant trailing form.",3.8
+9,Philodendron,Ficus lyrata,3.48,2.75,"Nearly indestructible succulent with waxy leaves, minimal water needs.",4.8
+10,Money Plant,Fuchsia,1.75,2.3,"Dark red foliage plant, tropical appearance.",3.7
+11,Coleus,Mentha,3.52,2.52,"Slipper orchid, unique pouch-shaped flower.",4.5
+12,Epipremnum,Chlorophytum elatum,1.27,2.61,"Colorful bedding plant, blooms throughout the season.",4.2
+13,Majesty Palm,Chlorophytum elatum,3.98,1.92,"Red flowering plant, requires bright light.",4.8
+14,Dracaena,Dypsis lutescens,4.2,2.86,"Tropical flowering plant, large showy flowers.",3.9
+15,Aloe Vera,Gasteria brachyphylla,4.44,1.24,"Tree-form plant, architectural leaves.",4.2
+16,Aspidistra,Origanum majorana,1.14,0.66,"Unique spotted leaves, compact size.",4.3
+17,Syngonium,Lavandula angustifolia,4.54,1.52,"Graceful palm tree, brings tropical elegance.",5.0
+18,Cactus,Sedum,2.72,2.69,"Compact flowering plant, requires filtered bright light.",3.7
+19,Petunia,Laelia,2.4,0.41,"Delicate flowers in clusters, elegant trailing form.",4.4
+20,Sage,Aeonium arboreum,1.63,2.03,"Hardy succulent with dark green leaves, tolerates low light conditions.",4.5
+21,African Violet,Laelia,4.48,2.68,"Tropical tree, architectural statement piece.",4.0
+22,Lily,Hosta,4.61,3.07,"Dainty flowers, prefers cool conditions.",4.8
+23,Hosta,Epipremnum pinnatum,1.4,1.43,"Colorful bedding plant, blooms throughout the season.",4.3
+24,Aeonium,Monstera deliciosa,3.2,1.81,"Compact flowering plant, requires filtered bright light.",4.9
+25,Begonia Maculata,Chamaedorea elegans,0.76,3.1,"Nearly indestructible succulent with waxy leaves, minimal water needs.",3.6
+26,Chives,Philodendron hederaceum,4.9,1.96,"Colorful foliage plant, prefers warm humid conditions.",3.7
+27,Parsley,Lithops pseudotruncatella,1.24,1.94,"Variegated leaves, creates visual interest.",4.1
+28,Cordyline,Sansevieria trifasciata,2.18,3.17,"Culinary herb, aromatic and medicinal.",3.7
+29,Bamboo Palm,Philodendron hederaceum,2.02,2.14,"Feathery palm, adds height and drama.",4.4
+30,Flamingo Flower,Calathea orbifolia,2.81,1.12,"Rosette-forming succulent, drought tolerant.",3.8
+31,Begonia,Peperomia obtusifolia,3.09,1.0,"Shade tolerant plant, decorative leaves.",4.7
+32,Sunflower,Epipremnum pinnatum,0.94,1.62,"Fragrant herb, beautiful purple flowers.",4.1
+33,Rubber Plant,Yucca elephantipes,3.44,2.33,"Compact plant with variegated foliage, tolerates low light.",4.1
+34,Chrysanthemum,Schlumbergera truncata,2.58,3.09,"Beautiful patterned leaves, prefers humid environments.",4.2
+35,Lithops,Epipremnum pinnatum,4.31,2.74,"Hardy succulent with dark green leaves, tolerates low light conditions.",5.0
+36,Parlor Palm,Rosa,2.33,1.79,"Tropical flowering plant, large showy flowers.",4.9
+37,Rose,Fuchsia,0.51,1.49,"Culinary herb, mild onion flavor.",3.9
+38,Dendrobium,Aloe arborescens,3.48,1.81,"Tall flowering plant, symbolizes summer and happiness.",3.9
+39,Sedum,Zamioculcas zamiifolia,4.33,0.43,"Climbing vine with attractive split leaves, easy care.",4.5
+40,Sago Palm,Mentha,3.51,1.24,"Ornamental palm, slow growing but very attractive.",4.1
+41,Aglonema,Gasteria brachyphylla,4.98,0.44,"Medicinal succulent, soothing gel inside leaves.",4.3
+42,Thyme,Haworthia attenuata,3.67,2.22,"Tree-form plant, architectural leaves.",4.3
+43,Mint,Laelia,3.35,1.07,"Rosette-forming succulent, drought tolerant.",3.9
+44,Lavender,Aloe arborescens,4.27,2.48,"Dancing orchid, delicate nodding flowers.",4.9
+45,Haworthia,Spathiphyllum wallisii,4.26,2.12,"Compact rosette-forming succulent, drought tolerant.",4.1
+46,Lantana,Aglaonema commutatum,3.87,3.26,"Elegant palm, tolerates indoor conditions well.",4.8
+47,Marjoram,Codiaeum variegatum,1.87,2.82,"Feathery palm, adds height and drama.",3.8
+48,Dracaena Marginata,Helianthus,4.54,2.99,"Climbing vine with attractive split leaves, easy care.",5.0
+49,Christmas Cactus,Codiaeum variegatum,3.39,1.52,"Bell-shaped succulent, compact form.",4.0
+50,Rosemary,Monstera deliciosa,2.84,2.86,"Slipper orchid, unique pouch-shaped flower.",4.6
+51,Salvia,Cordyline terminalis,4.73,2.44,"Spring bulb flower, elegant and fragrant.",4.4
+52,Cyclamen,Hibiscus rosa-sinensis,2.97,0.2,"Festive plant with red leaves, popular during holidays.",3.8
+53,Poinsettia,Sedum,3.49,2.24,"Compact succulent with thick fleshy leaves, symbolic plant.",4.7
+54,Lady Palm,Petroselinum crispum,3.25,2.74,"Culinary herb, mild onion flavor.",4.1
+55,Dieffenbachia,Peperomia obtusifolia,1.37,2.5,"Dark rosette succulent, tree-like form.",4.1
+56,Succulent,Sansevieria trifasciata,3.59,3.15,"Delicate fronds, adds tropical feel to spaces.",4.7
+57,Aloe,Rhaphidophora tetrasperma,1.93,2.69,"Culinary herb, delicate fragrance.",4.4
+58,Echeveria,Allium schoenoprasum,3.32,1.11,"Beautiful patterned leaves, prefers humid environments.",4.6
+59,Areca Palm,Pelargonium,3.62,2.53,"Climbing vine with attractive split leaves, easy care.",4.1
+60,Fuchsia,Schlumbergera truncata,3.88,2.95,"Tall palm, creates statement in large spaces.",4.8
+61,Pothos,Aglaonema commutatum,1.19,0.62,"Showy orchid, multiple flower colors.",3.7
+62,Gasteria,Ficus lyrata,2.06,1.61,"Patient plant, produces colorful flowers.",3.6
+63,Iresine,Chlorophytum elatum,4.51,1.72,"Spring flowering bulb, produces vibrant colored flowers.",4.2
+64,Jade Plant,Schlumbergera truncata,4.47,1.0,"Culinary herb, subtle licorice flavor.",4.4
+65,Cattleya,Chrysanthemum,1.36,2.64,"Unique flowers, blooms during winter holidays.",4.6
+66,Tulip,Gasteria brachyphylla,4.77,0.48,"Classic palm, decorative and air purifying.",3.7
+67,Tarragon,Thymus vulgaris,0.86,0.33,"Culinary herb with needle leaves, evergreen.",4.6
+68,Peperomia,Scindapsus pictus,4.78,3.5,"Orchid with dense flowers, long-lasting blooms.",4.7
+69,Hibiscus,Sedum,4.21,0.2,"Tropical appearing plant, minimal watering needed.",4.2
+70,Tulsi,Ocimum tenuiflorum,4.41,1.43,"Holy plant revered in India; emits oxygen even at night and has medicinal uses.",4.6

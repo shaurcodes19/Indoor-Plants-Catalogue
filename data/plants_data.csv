@@ -1,0 +1,151 @@
+Plant ID,Plant Name,Plant Scientific Name,Plant O2 Release Data,Plant CO Absorb Data,Short Description of the plant,Recommendation Rating out of 5
+PLT-0001,Chlorophytum,Saintpaulia ionantha,0.61,1.11,"Graceful palm tree, brings tropical elegance.",3.7
+PLT-0002,Boston Fern,Yucca elephantipes,3.83,2.0,"Aroid plant, glossy green leaves.",4.1
+PLT-0003,Spider Plant,Crassula ovata,1.48,1.87,"Produces long arching leaves with white stripes, very resilient.",4.3
+PLT-0004,Oncidium,Sansevieria trifasciata,3.66,1.58,"Culinary herb, aromatic and medicinal.",4.4
+PLT-0005,Monstera Deliciosa,Petunia,3.64,1.32,"Spring flowering bulb, produces vibrant colored flowers.",3.8
+PLT-0006,Spathiphyllum,Nephrolepis exaltata,0.92,0.52,"Colorful foliage plant, dramatic leaf patterns.",4.4
+PLT-0007,Fiddle Leaf Fig,Origanum majorana,2.91,3.41,"Delicate flowers in clusters, elegant trailing form.",3.6
+PLT-0008,Amaryllis,Dieffenbachia seguine,3.28,3.04,"Variegated leaves, elegant trailing form.",3.8
+PLT-0009,Philodendron,Ficus lyrata,3.48,2.75,"Nearly indestructible succulent with waxy leaves, minimal water needs.",4.8
+PLT-0010,Money Plant,Fuchsia,1.75,2.3,"Dark red foliage plant, tropical appearance.",3.7
+PLT-0011,Coleus,Mentha,3.52,2.52,"Slipper orchid, unique pouch-shaped flower.",4.5
+PLT-0012,Epipremnum,Chlorophytum elatum,1.27,2.61,"Colorful bedding plant, blooms throughout the season.",4.2
+PLT-0013,Majesty Palm,Chlorophytum elatum,3.6,0.92,"Red flowering plant, requires bright light.",4.8
+PLT-0014,Dracaena,Dypsis lutescens,4.2,2.86,"Tropical flowering plant, large showy flowers.",3.9
+PLT-0015,Aloe Vera,Gasteria brachyphylla,4.44,1.24,"Tree-form plant, architectural leaves.",4.2
+PLT-0016,Aspidistra,Origanum majorana,1.14,0.66,"Unique spotted leaves, compact size.",4.3
+PLT-0017,Syngonium,Lavandula angustifolia,4.54,1.52,"Graceful palm tree, brings tropical elegance.",5.0
+PLT-0018,Cactus,Sedum,2.72,2.69,"Compact flowering plant, requires filtered bright light.",3.7
+PLT-0019,Petunia,Laelia,2.4,0.41,"Delicate flowers in clusters, elegant trailing form.",4.4
+PLT-0020,Sage,Aeonium arboreum,1.63,2.03,"Hardy succulent with dark green leaves, tolerates low light conditions.",4.5
+PLT-0021,African Violet,Laelia,4.48,2.68,"Tropical tree, architectural statement piece.",4.0
+PLT-0022,Amaryllis,Rosmarinus officinalis,1.21,0.21,"Ornamental palm, slow growing but very attractive.",5.0
+PLT-0023,Lily,Hosta,4.61,3.07,"Dainty flowers, prefers cool conditions.",4.8
+PLT-0024,Hosta,Epipremnum pinnatum,1.4,1.43,"Colorful bedding plant, blooms throughout the season.",4.3
+PLT-0025,Aeonium,Monstera deliciosa,3.2,1.81,"Compact flowering plant, requires filtered bright light.",4.9
+PLT-0026,Begonia Maculata,Chamaedorea elegans,0.76,3.1,"Nearly indestructible succulent with waxy leaves, minimal water needs.",3.6
+PLT-0027,Chives,Philodendron hederaceum,4.9,1.96,"Colorful foliage plant, prefers warm humid conditions.",3.7
+PLT-0028,Parsley,Lithops pseudotruncatella,1.24,1.94,"Variegated leaves, creates visual interest.",4.1
+PLT-0029,Aloe Vera,Haworthia attenuata,3.9,2.48,"Spotted begonia, attractive foliage and flowers.",4.1
+PLT-0030,Cordyline,Sansevieria trifasciata,2.18,3.17,"Culinary herb, aromatic and medicinal.",3.7
+PLT-0031,Bamboo Palm,Philodendron hederaceum,2.02,2.14,"Feathery palm, adds height and drama.",4.4
+PLT-0032,Monstera Deliciosa,Calathea orbifolia,3.69,0.39,"Climbing vine with attractive split leaves, easy care.",4.9
+PLT-0033,Flamingo Flower,Calathea orbifolia,2.81,1.12,"Rosette-forming succulent, drought tolerant.",3.8
+PLT-0034,Begonia,Peperomia obtusifolia,3.09,1.0,"Shade tolerant plant, decorative leaves.",4.7
+PLT-0035,Sunflower,Epipremnum pinnatum,0.94,1.62,"Fragrant herb, beautiful purple flowers.",4.1
+PLT-0036,Rubber Plant,Yucca elephantipes,3.44,2.33,"Compact plant with variegated foliage, tolerates low light.",4.1
+PLT-0037,Spathiphyllum,Nephrolepis exaltata,1.62,0.83,"Culinary herb, aromatic and medicinal.",3.7
+PLT-0038,Chrysanthemum,Schlumbergera truncata,2.58,3.09,"Beautiful patterned leaves, prefers humid environments.",4.2
+PLT-0039,Lithops,Epipremnum pinnatum,0.73,3.5,"Hardy succulent with dark green leaves, tolerates low light conditions.",5.0
+PLT-0040,Parlor Palm,Rosa,2.33,1.79,"Tropical flowering plant, large showy flowers.",4.9
+PLT-0041,Rose,Fuchsia,0.51,1.49,"Culinary herb, mild onion flavor.",3.9
+PLT-0042,Dendrobium,Aloe arborescens,3.48,1.81,"Tall flowering plant, symbolizes summer and happiness.",3.9
+PLT-0043,Dracaena,Syngonium podophyllum,3.81,0.4,"Unique round leaves, compact and modern looking.",3.6
+PLT-0044,Syngonium,Coriandrum sativum,2.76,3.01,"Colorful bedding plant, blooms throughout the season.",3.6
+PLT-0045,Sedum,Zamioculcas zamiifolia,4.33,0.43,"Climbing vine with attractive split leaves, easy care.",4.5
+PLT-0046,Parlor Palm,Hibiscus rosa-sinensis,1.04,3.14,"Classic palm, decorative and air purifying.",4.4
+PLT-0047,Fiddle Leaf Fig,Aglaonema commutatum,0.87,2.37,"Miniature variety, impressive growth rate.",4.3
+PLT-0048,Sago Palm,Mentha,3.51,1.24,"Ornamental palm, slow growing but very attractive.",4.1
+PLT-0049,Cordyline,Aspidistra elatior,1.85,1.24,"Beautiful patterned leaves, prefers humid environments.",3.5
+PLT-0050,Aglonema,Gasteria brachyphylla,4.98,0.44,"Medicinal succulent, soothing gel inside leaves.",4.3
+PLT-0051,Begonia,Codiaeum variegatum,4.46,3.1,"Patient plant, produces colorful flowers.",3.9
+PLT-0052,Thyme,Haworthia attenuata,3.67,2.22,"Tree-form plant, architectural leaves.",4.3
+PLT-0053,Cordyline,Lithops pseudotruncatella,1.85,2.39,"Desert plant, needs bright light and minimal water.",3.9
+PLT-0054,Boston Fern,Lithops pseudotruncatella,1.2,1.13,"Aromatic herb, used in cooking and beverages.",4.6
+PLT-0055,Mint,Laelia,3.35,1.07,"Rosette-forming succulent, drought tolerant.",3.9
+PLT-0056,Rubber Plant,Crassula ovata,3.35,2.94,"Large dramatic leaves, requires bright indirect light and regular watering.",3.5
+PLT-0057,Begonia,Chlorophytum elatum,4.91,0.73,"Culinary herb, delicate fragrance.",4.3
+PLT-0058,Lavender,Aloe arborescens,0.54,0.45,"Dancing orchid, delicate nodding flowers.",4.9
+PLT-0059,Haworthia,Spathiphyllum wallisii,4.26,2.12,"Compact rosette-forming succulent, drought tolerant.",4.1
+PLT-0060,Fiddle Leaf Fig,Begonia maculata,2.14,3.28,"Large dramatic leaves, requires bright indirect light and regular watering.",4.8
+PLT-0061,Mint,Laelia,1.62,0.54,"Unique spotted leaves, compact size.",4.8
+PLT-0062,Lantana,Aglaonema commutatum,3.87,3.26,"Elegant palm, tolerates indoor conditions well.",4.8
+PLT-0063,Lily,Lantana camara,0.61,2.63,"Compact flowering plant, excellent for shelves.",4.7
+PLT-0064,Lantana,Cordyline terminalis,4.39,2.88,"Structural palm, adds architectural interest.",3.7
+PLT-0065,Dendrobium,Nephrolepis exaltata,2.22,0.33,"Shade tolerant plant, decorative leaves.",3.8
+PLT-0066,Marjoram,Codiaeum variegatum,1.87,2.82,"Feathery palm, adds height and drama.",3.8
+PLT-0067,Dracaena Marginata,Helianthus,2.29,1.12,"Climbing vine with attractive split leaves, easy care.",5.0
+PLT-0068,Christmas Cactus,Codiaeum variegatum,3.39,1.52,"Bell-shaped succulent, compact form.",4.0
+PLT-0069,Spider Plant,Saintpaulia ionantha,4.45,1.06,"Low-growing spreading plant, colorful foliage.",4.9
+PLT-0070,Sago Palm,Spathiphyllum wallisii,0.99,1.63,"Unique round leaves, compact and modern looking.",4.2
+PLT-0071,Sedum,Saintpaulia ionantha,2.23,2.1,"Tall palm, creates statement in large spaces.",3.6
+PLT-0072,Rosemary,Monstera deliciosa,2.84,2.86,"Slipper orchid, unique pouch-shaped flower.",4.6
+PLT-0073,Cordyline,Ocimum basilicum,2.14,0.43,"Showy orchid, multiple flower colors.",4.9
+PLT-0074,Aglonema,Pilea peperomioides,3.49,0.61,"Dainty flowers, prefers cool conditions.",4.3
+PLT-0075,Cordyline,Lantana camara,1.97,2.5,"Pink-edged leaves, attractive foliage.",3.7
+PLT-0076,Salvia,Cordyline terminalis,4.73,2.44,"Spring bulb flower, elegant and fragrant.",4.4
+PLT-0077,Cyclamen,Hibiscus rosa-sinensis,2.97,0.2,"Festive plant with red leaves, popular during holidays.",3.8
+PLT-0078,Syngonium,Epipremnum pinnatum,3.45,1.73,"Culinary herb, delicate fragrance.",4.5
+PLT-0079,Sedum,Petroselinum crispum,4.07,3.37,"Classic flowering plant, symbolizes love and beauty.",4.5
+PLT-0080,Poinsettia,Sedum,3.49,2.24,"Compact succulent with thick fleshy leaves, symbolic plant.",4.7
+PLT-0081,Parlor Palm,Yucca elephantipes,1.9,2.86,"Compact rosette-forming succulent, drought tolerant.",3.5
+PLT-0082,Lady Palm,Petroselinum crispum,3.25,2.74,"Culinary herb, mild onion flavor.",4.1
+PLT-0083,Dieffenbachia,Peperomia obtusifolia,1.37,2.5,"Dark rosette succulent, tree-like form.",4.1
+PLT-0084,Succulent,Sansevieria trifasciata,3.59,3.15,"Delicate fronds, adds tropical feel to spaces.",4.7
+PLT-0085,Bamboo Palm,Lilium,4.12,2.5,"Culinary herb, subtle licorice flavor.",3.6
+PLT-0086,Lady Palm,Orchidaceae,2.55,2.84,"Showy orchid, multiple flower colors.",4.3
+PLT-0087,Aloe,Rhaphidophora tetrasperma,1.93,2.69,"Culinary herb, delicate fragrance.",4.4
+PLT-0088,Hosta,Lavandula angustifolia,4.24,2.01,"Colorful bedding plant, blooms throughout the season.",4.6
+PLT-0089,Parsley,Origanum vulgare,1.67,1.02,"Striped foliage, architectural form.",3.9
+PLT-0090,Echeveria,Allium schoenoprasum,3.32,1.11,"Beautiful patterned leaves, prefers humid environments.",4.6
+PLT-0091,Parlor Palm,Ravenea rivularis,2.01,3.15,"Nearly indestructible succulent with waxy leaves, minimal water needs.",3.7
+PLT-0092,Areca Palm,Pelargonium,3.62,2.53,"Climbing vine with attractive split leaves, easy care.",4.1
+PLT-0093,Flamingo Flower,Haworthia attenuata,2.6,0.41,"Aromatic herb, purple flowers, attracts pollinators.",4.1
+PLT-0094,Syngonium,Dendrobium,0.59,3.11,"Variegated leaves, elegant trailing form.",4.1
+PLT-0095,Monstera Deliciosa,Coleus scutellarioides,1.84,1.49,"Aromatic herb, purple flowers, attracts pollinators.",4.3
+PLT-0096,Haworthia,Epipremnum pinnatum,4.54,1.81,"Structural palm, adds architectural interest.",4.2
+PLT-0097,Spider Plant,Pelargonium,2.01,2.44,"Tropical flowering plant, large showy flowers.",4.6
+PLT-0098,Sage,Begonia,4.91,1.96,"Vibrant papery flowers, tropical appearance.",4.4
+PLT-0099,Dracaena Marginata,Chlorophytum comosum,0.88,1.61,"Culinary herb, subtle licorice flavor.",3.8
+PLT-0100,Sago Palm,Fuchsia,1.97,1.7,"Peace plant, excellent air purifier, produces white flowers.",4.6
+PLT-0101,Fuchsia,Schlumbergera truncata,3.88,2.95,"Tall palm, creates statement in large spaces.",4.8
+PLT-0102,Parsley,Epipremnum aureum,3.87,0.37,"Colorful foliage plant, dramatic leaf patterns.",3.8
+PLT-0103,Philodendron,Sansevieria trifasciata,0.68,0.3,"Classic palm, decorative and air purifying.",3.8
+PLT-0104,Pothos,Aglaonema commutatum,1.19,0.62,"Showy orchid, multiple flower colors.",3.7
+PLT-0105,Aloe Vera,Salvia officinalis,3.65,2.73,"Classic flowering plant, symbolizes love and beauty.",4.4
+PLT-0106,Oncidium,Saintpaulia ionantha,4.0,0.74,"Spotted begonia, attractive foliage and flowers.",3.7
+PLT-0107,Spider Plant,Begonia maculata,3.09,3.2,"Delicate flowers in clusters, elegant trailing form.",4.1
+PLT-0108,Oncidium,Ocimum basilicum,0.84,2.48,"Large-leafed houseplant, slow grower.",3.9
+PLT-0109,Dendrobium,Cyclamen coum,4.33,2.18,"Exotic flowering plant, requires special care and humidity.",4.7
+PLT-0110,Gasteria,Ficus lyrata,2.06,1.61,"Patient plant, produces colorful flowers.",3.6
+PLT-0111,Aspidistra,Spathiphyllum cochlearispathum,0.56,1.59,"Rosette-forming succulent, drought tolerant.",3.7
+PLT-0112,Iresine,Chlorophytum elatum,4.51,1.72,"Spring flowering bulb, produces vibrant colored flowers.",4.2
+PLT-0113,Echeveria,Sansevieria trifasciata,1.72,2.87,"Bell-shaped succulent, compact form.",4.7
+PLT-0114,Sage,Rosmarinus officinalis,4.22,2.16,"Red flowering plant, requires bright light.",4.8
+PLT-0115,Jade Plant,Schlumbergera truncata,4.47,1.0,"Culinary herb, subtle licorice flavor.",4.4
+PLT-0116,Cordyline,Fuchsia,2.01,1.83,"Red flowering plant, requires bright light.",3.8
+PLT-0117,Aloe Vera,Coleus scutellarioides,4.09,1.32,"Compact houseplant, easy propagation.",4.6
+PLT-0118,Christmas Cactus,Aloe arborescens,0.55,3.33,"Nearly indestructible succulent with waxy leaves, minimal water needs.",3.9
+PLT-0119,Lantana,Allium schoenoprasum,3.0,0.99,"Shade tolerant plant, decorative leaves.",4.5
+PLT-0120,Chives,Origanum vulgare,4.07,0.51,"Graceful palm tree, brings tropical elegance.",4.1
+PLT-0121,Lady Palm,Begonia maculata,3.49,1.42,"Pink-edged leaves, attractive foliage.",4.3
+PLT-0122,Lavender,Lithops pseudotruncatella,1.99,2.52,"Structural palm, adds architectural interest.",4.0
+PLT-0123,Areca Palm,Orchidaceae,3.75,1.24,"Bell-shaped succulent, compact form.",4.9
+PLT-0124,Cattleya,Chrysanthemum,1.36,2.64,"Unique flowers, blooms during winter holidays.",4.6
+PLT-0125,Aeonium,Rhaphidophora tetrasperma,1.77,0.53,"Tall flowering plant, symbolizes summer and happiness.",3.9
+PLT-0126,Iresine,Lilium,1.86,2.54,"Colorful foliage plant, prefers warm humid conditions.",3.9
+PLT-0127,Rubber Plant,Lithops pseudotruncatella,1.81,3.32,"Striped foliage, architectural form.",4.8
+PLT-0128,Chives,Nephrolepis exaltata,4.43,2.09,"Shade tolerant plant, decorative leaves.",4.2
+PLT-0129,Spathiphyllum,Chrysanthemum,4.84,1.03,"Compact succulent, variety of colors.",3.7
+PLT-0130,Philodendron,Hibiscus rosa-sinensis,2.71,2.1,"Slipper orchid, unique pouch-shaped flower.",3.6
+PLT-0131,Tulip,Gasteria brachyphylla,4.77,0.48,"Classic palm, decorative and air purifying.",3.7
+PLT-0132,Salvia,Epipremnum pinnatum,3.18,2.24,"Living stones succulent, unique rock-like appearance.",4.1
+PLT-0133,Thyme,Cyclamen coum,4.37,3.47,"Spotted begonia, attractive foliage and flowers.",4.4
+PLT-0134,Dracaena,Homalomena wallisii,4.82,0.53,"Aromatic herb, used in cooking and beverages.",4.4
+PLT-0135,Sago Palm,Dracaena marginata,0.87,0.99,"Pink-edged leaves, attractive foliage.",3.6
+PLT-0136,Monstera Deliciosa,Lantana camara,2.53,2.16,"Tall flowering bulb, dramatic trumpet-shaped flowers.",3.5
+PLT-0137,Poinsettia,Paphiopedilum,1.77,3.04,"Beautiful patterned leaves, prefers humid environments.",4.5
+PLT-0138,Sago Palm,Dieffenbachia seguine,3.15,2.85,"Culinary herb, aromatic and easy to grow.",4.1
+PLT-0139,Haworthia,Chamaedorea elegans,3.41,3.2,"Compact rosette-forming succulent, drought tolerant.",3.6
+PLT-0140,Rose,Begonia maculata,3.18,2.92,"Festive plant with red leaves, popular during holidays.",4.2
+PLT-0141,Sage,Cattleya,1.87,1.53,"Structural palm, adds architectural interest.",4.3
+PLT-0142,Tarragon,Thymus vulgaris,0.86,0.33,"Culinary herb with needle leaves, evergreen.",4.6
+PLT-0143,Epipremnum,Howea forsteriana,0.62,0.96,"Orchid with dense flowers, long-lasting blooms.",4.8
+PLT-0144,Peperomia,Scindapsus pictus,4.78,3.5,"Orchid with dense flowers, long-lasting blooms.",4.7
+PLT-0145,Peperomia,Ficus lyrata,3.93,0.78,"Living stones succulent, unique rock-like appearance.",4.5
+PLT-0146,Christmas Cactus,Chrysanthemum,4.99,1.64,"Rosette-forming succulent, drought tolerant.",5.0
+PLT-0147,Parsley,Codiaeum variegatum,2.34,1.26,"Delicate fronds, adds tropical feel to spaces.",4.8
+PLT-0148,Flamingo Flower,Lantana camara,3.62,1.15,"Tropical flowering plant, large showy flowers.",4.7
+PLT-0149,Lithops,Spathiphyllum wallisii,2.55,1.24,"Red flowering plant, requires bright light.",3.7
+PLT-0150,Hibiscus,Sedum,4.21,0.2,"Tropical appearing plant, minimal watering needed.",4.2

@@ -1,0 +1,37 @@
+Plant ID,Plant Name,Plant Scientific Name,Plant O2 Release Data,Plant CO Absorb Data,Short Description of Plant,Recommendation Rating out of 5
+1,Areca Palm,Dypsis lutescens,High,Moderate,A popular indoor palm that purifies air and adds tropical beauty.,5.0
+2,Snake Plant,Sansevieria trifasciata,High (Night-time release),High,Known as Mother-in-law's Tongue; absorbs toxins and releases oxygen at night,5.0
+3,Aloe Vera,Aloe barbadensis miller,Moderate,Moderate,"A succulent plant with healing properties, especially for skin and burns.",4.5
+4,Money Plant,Epipremnum aureum,High,Moderate,Easy-to-grow vine that brings prosperity and purifies indoor air.,4.5
+5,Neem Tree,Azadirachta indica,Very High,High,Sacred tree with exceptional air-purifying and antibacterial properties.,5.0
+6,Tulsi (Holy Basil),Ocimum tenuiflorum,High (24-hour release),Moderate,Holy plant revered in India; emits oxygen even at night and has medicinal uses.,5.0
+7,Peace Lily,Spathiphyllum wallisii,Moderate,High,Elegant plant that removes indoor pollutants and thrives in low light.,4.0
+8,Rubber Plant,Ficus elastica,Moderate,Moderate,Large glossy leaves; excellent air purifier and low maintenance.,4.5
+9,Bamboo Palm,Chamaedorea seifrizii,High,High,"Compact palm that removes benzene and formaldehyde, great for indoors.",4.0
+10,Peepal Tree,Ficus religiosa,Very High (Day & Night),High,Sacred fig tree; releases oxygen day and night and revered in Indian culture.,5.0
+11,Lavender,Lavandula angustifolia,Moderate,Moderate,Fragrant herb known for stress relief and sleep improvement.,4.5
+12,Jade Plant,Crassula ovata,Moderate,Moderate,Succulent that brings good luck and improves humidity.,4.0
+13,Boston Fern,Nephrolepis exaltata,High,High,Excellent humidifying plant and strong air purifier.,4.5
+14,Spider Plant,Chlorophytum comosum,High,Moderate,Hardy indoor plant known for removing toxins like carbon monoxide.,5.0
+15,ZZ Plant,Zamioculcas zamiifolia,Moderate,Moderate,Popular low-light plant great for offices and bedrooms.,4.0
+16,Peepal Plant Small,Ficus religiosa (Dwarf),Very High,High,Dwarf variety of sacred fig; excellent oxygen release.,5.0
+17,Banana Plant,Musa acuminata,High,Moderate,Large-leaf plant releasing oxygen and adding humidity.,4.0
+18,English Ivy,Hedera helix,High,High,Removes mold spores and improves air quality.,4.5
+19,Chinese Evergreen,Aglaonema,Moderate,Moderate,Attractive plant with strong pollutant absorption.,4.0
+20,Croton,Codiaeum variegatum,Moderate,Moderate,Colorful foliage plant that enhances mood.,3.5
+21,Dumb Cane,Dieffenbachia seguine,Moderate,Moderate,Large-leaf plant improving oxygen level indoors.,4.0
+22,Philodendron,Philodendron hederaceum,High,Moderate,Trailing vine excellent for CO2 absorption.,4.5
+23,Weeping Fig,Ficus benjamina,Moderate,High,Popular indoor tree removing common pollutants.,4.0
+24,Kalanchoe,Kalanchoe blossfeldiana,Moderate,Low,Flowering succulent improving mood and air quality.,3.5
+25,Areca Dwarf,Dypsis lutescens (Dwarf),High,Moderate,"Compact version of areca palm, great for indoor spaces.",5.0
+26,Pothos Njoy,Epipremnum aureum Njoy,High,Moderate,Variegated pothos variety; excellent purifier.,5.0
+27,Parlor Palm,Chamaedorea elegans,Moderate,Moderate,Compact palm suitable for low-light indoors.,4.0
+28,Oxalis,Oxalis triangularis,Low,Low,Decorative plant with purple leaves; mild purifier.,3.0
+29,Pothos,Epipremnum aureum Njoy,Very High,Low,Popular choice for air purification and decor.,3.5
+30,Succulent Mix,Succulent hybrid,Low,Moderate,Excellent indoor plant improving air quality.,4.5
+31,Mini Palm,Phoenix roebelenii,Low,Moderate,Releases oxygen and enhances indoor humidity.,3.0
+32,Lucky Bamboo,Dracaena sanderiana,Low,Very High,Popular choice for air purification and decor.,4.0
+33,Haworthia,Haworthia fasciata,Moderate,High,Hardy plant suitable for offices and low light.,3.5
+34,Ficus Bonsai,Ficus retusa,Moderate,Very High,Low maintenance plant with strong CO2 absorption.,4.5
+35,Sansevieria Moonshine,Sansevieria 'Moonshine',Very High,Moderate,Releases oxygen and enhances indoor humidity.,5.0
+36,Air Plant,Tillandsia,High,Very High,Popular choice for air purification and decor.,3.0
