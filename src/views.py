@@ -8,7 +8,6 @@ from .ui_shared import GlassFrame, FlowLayout
 from .core import Plant
 
 
-# --- NEW: Ranked Row Widget for Home Tab ---
 class RankedPlantRow(GlassFrame):
     clicked = pyqtSignal(object, object)
 
@@ -16,15 +15,13 @@ class RankedPlantRow(GlassFrame):
         super().__init__()
         self.plant = plant
         self.rank = rank
-        self.setFixedHeight(100)  # Fixed height for the row
+        self.setFixedHeight(100)
         self.setCursor(QCursor(Qt.PointingHandCursor))
 
-        # Horizontal Layout for the row
         layout = QHBoxLayout(self)
         layout.setContentsMargins(20, 10, 20, 10)
         layout.setSpacing(20)
 
-        # 1. Rank Indicator
         self.rank_label = QLabel(f"#{rank}")
         rank_font_size = "32px" if rank <= 3 else "24px"
         rank_color = self._get_rank_color(rank)
@@ -32,7 +29,6 @@ class RankedPlantRow(GlassFrame):
         self.rank_label.setFixedWidth(60)
         self.rank_label.setAlignment(Qt.AlignCenter)
 
-        # 2. Name & Scientific Name (Vertical Stack)
         name_layout = QVBoxLayout()
         name_layout.setSpacing(2)
 
@@ -47,17 +43,14 @@ class RankedPlantRow(GlassFrame):
         name_layout.addWidget(self.sci_label)
         name_layout.addStretch()
 
-        # 3. Tags (O2 / CO2) - Simplified as requested
         tags_layout = QHBoxLayout()
 
-        # O2 Tag - Text only, value in tooltip
         o2_tag = QLabel("O₂")
         o2_tag.setToolTip(f"O₂ Release: {plant.o2_data} ml/d")
         o2_tag.setStyleSheet(self._get_tag_style(plant.o2_data, is_o2=True))
         o2_tag.setFixedSize(30, 24)
         o2_tag.setAlignment(Qt.AlignCenter)
 
-        # CO2 Tag - Text only, value in tooltip
         co2_tag = QLabel("CO₂")
         co2_tag.setToolTip(f"CO₂ Absorption: {plant.co2_data} mg/d")
         co2_tag.setStyleSheet(self._get_tag_style(plant.co2_data, is_o2=False))
@@ -67,7 +60,6 @@ class RankedPlantRow(GlassFrame):
         tags_layout.addWidget(o2_tag)
         tags_layout.addWidget(co2_tag)
 
-        # 4. Rating
         try:
             stars = int(round(self.plant.rating))
         except (ValueError, TypeError):
@@ -77,17 +69,16 @@ class RankedPlantRow(GlassFrame):
         self.rating_label.setStyleSheet("color: #FFD700; font-size: 18px;")
         self.rating_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
-        # Add all to main row layout
         layout.addWidget(self.rank_label)
-        layout.addLayout(name_layout, stretch=1)  # Name takes available space
+        layout.addLayout(name_layout, stretch=1)
         layout.addLayout(tags_layout)
         layout.addWidget(self.rating_label)
 
     def _get_rank_color(self, rank):
-        if rank == 1: return "#FFD700"  # Gold
-        if rank == 2: return "#E0E0E0"  # Silver
-        if rank == 3: return "#CD7F32"  # Bronze
-        return "rgba(255,255,255,0.5)"  # Dimmed white for others
+        if rank == 1: return "#FFD700"
+        if rank == 2: return "#E0E0E0"
+        if rank == 3: return "#CD7F32"
+        return "rgba(255,255,255,0.5)"
 
     def _get_tag_style(self, data, is_o2=True):
         try:
@@ -127,7 +118,7 @@ class PlantCard(GlassFrame):
         self.setFixedSize(198, 180)
         self.setCursor(QCursor(Qt.PointingHandCursor))
 
-        # CRITICAL: Disable shadow for cards when loading 1000+ items to prevent 0xC0000409 crash
+        # Disable shadow for performance with large datasets
         self.setGraphicsEffect(None)
 
         layout = QVBoxLayout(self)
@@ -179,38 +170,15 @@ class PlantCard(GlassFrame):
             clean_str = str(data).split()[0]
             val = float(clean_str)
 
-            # Colors: Best -> Worst
-            c_best = ("#145A32", "white")
-            c_good = ("#27AE60", "white")
-            c_mid = ("#F1C40F", "black")
-            c_low = ("#E67E22", "white")
-            c_bad = ("#C0392B", "white")
+            c_best, c_good, c_mid, c_low, c_bad = ("#145A32", "#27AE60", "#F1C40F", "#E67E22", "#C0392B")
 
             if is_o2:
-                if val >= 4.0:
-                    bg, fg = c_best
-                elif val >= 3.0:
-                    bg, fg = c_good
-                elif val >= 2.0:
-                    bg, fg = c_mid
-                elif val >= 1.0:
-                    bg, fg = c_low
-                else:
-                    bg, fg = c_bad
+                col = c_best if val >= 4.0 else c_good if val >= 3.0 else c_mid if val >= 2.0 else c_low if val >= 1.0 else c_bad
             else:
-                if val >= 2.8:
-                    bg, fg = c_best
-                elif val >= 2.1:
-                    bg, fg = c_good
-                elif val >= 1.4:
-                    bg, fg = c_mid
-                elif val >= 0.7:
-                    bg, fg = c_low
-                else:
-                    bg, fg = c_bad
+                col = c_best if val >= 2.8 else c_good if val >= 2.1 else c_mid if val >= 1.4 else c_low if val >= 0.7 else c_bad
 
-            return f"background-color: {bg}; color: {fg}; border-radius: 4px; font-weight: bold; font-size: 10px;"
-
+            text_col = "black" if col == "#F1C40F" else "white"
+            return f"background-color: {col}; color: {text_col}; border-radius: 4px; font-weight: bold; font-size: 10px;"
         except (ValueError, TypeError, IndexError):
             d = str(data).lower()
             if "very high" in d: return "background-color: #145A32; color: white; border-radius: 4px;"
@@ -373,7 +341,6 @@ class BaseTab(QWidget):
         self.scroll.setWidgetResizable(True)
         self.content_widget = QWidget()
 
-        # Default layout is Flow (Grid)
         self.flow_layout = FlowLayout(self.content_widget)
 
         self.scroll.setWidget(self.content_widget)
@@ -391,10 +358,8 @@ class BaseTab(QWidget):
         raise NotImplementedError
 
     def populate_grid(self, plants):
-        # Clears whichever layout is currently set
         self._clear_layout()
 
-        # LOAD ALL - No lazy loading
         for p in plants:
             card = PlantCard(p)
             card.clicked.connect(self.open_detail)
@@ -420,15 +385,22 @@ class BaseTab(QWidget):
         dialog.exec_()
 
 
-# --- UPDATED: Home Tab now uses Vertical List for Leaderboard ---
 class HomeTab(BaseTab):
     def __init__(self, data_manager):
         super().__init__(data_manager)
+
+        self.setObjectName("HomeTab")
+        self.setAttribute(Qt.WA_StyledBackground, True)
+
+        self.setStyleSheet("""
+            #HomeTab {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #093637, stop:1 #44a08d);
+            }
+        """)
+
         self.search_bar.setPlaceholderText("Search top recommendations...")
 
-        # Override layout for Home Tab: Use VBox instead of Flow
-        # We need to replace the layout on content_widget
-        QWidget().setLayout(self.flow_layout)  # Detach old layout by parenting it to garbage
+        QWidget().setLayout(self.flow_layout)
         self.list_layout = QVBoxLayout(self.content_widget)
         self.list_layout.setAlignment(Qt.AlignTop)
         self.list_layout.setSpacing(10)
@@ -444,11 +416,9 @@ class HomeTab(BaseTab):
             results = self.dm.search(text)
             self.status_label.setText(f"Found {len(results)} matches.")
 
-        # We override populate_grid logic manually here for the VBox layout
         self.populate_leaderboard(results)
 
     def populate_leaderboard(self, plants):
-        # Clear VBox
         while self.list_layout.count():
             item = self.list_layout.takeAt(0)
             if item.widget():
@@ -456,7 +426,6 @@ class HomeTab(BaseTab):
                 item.widget().deleteLater()
 
         for idx, p in enumerate(plants):
-            # Rank is index + 1
             row = RankedPlantRow(p, rank=idx + 1)
             row.clicked.connect(self.open_detail)
             self.list_layout.addWidget(row)
