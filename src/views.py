@@ -1,11 +1,36 @@
+import os
+from enum import global_enum
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel,
                              QDialog, QPushButton, QScrollArea, QLineEdit, QFrame)
 from PyQt5.QtCore import (Qt, pyqtSignal, QTimer, QPropertyAnimation,
                           QEasingCurve, QRect, QPoint, QParallelAnimationGroup)
-from PyQt5.QtGui import QCursor, QColor
+from PyQt5.QtGui import QCursor, QColor, QPixmap
 
 from .ui_shared import GlassFrame, FlowLayout
 from .core import Plant
+
+
+def get_plant_image(plant_id):
+    current_file_dir = os.path.dirname(os.path.abspath(__file__))
+
+    project_root = os.path.dirname(current_file_dir)
+
+    candidate_dirs = [
+        os.path.join(project_root, 'assets'),
+        os.path.join(current_file_dir, 'assets'),
+        os.path.join(os.getcwd(), 'assets'),
+        'assets'
+    ]
+
+    extensions = ['.png', '.jpg', '.jpeg']
+
+    for folder in candidate_dirs:
+        if os.path.isdir(folder):
+            for ext in extensions:
+                full_path = os.path.join(folder, f"{plant_id}{ext}")
+                if os.path.exists(full_path):
+                    return full_path
+    return None
 
 
 class RankedPlantRow(GlassFrame):
@@ -210,8 +235,8 @@ class DetailModal(QDialog):
         self.setAttribute(Qt.WA_TranslucentBackground)
 
         self.start_geometry = start_geometry
-        self.target_width = 400
-        self.target_height = 500
+        self.target_width = 450
+        self.target_height = 600
         self.resize(self.target_width, self.target_height)
 
         container = GlassFrame(self)
@@ -220,7 +245,7 @@ class DetailModal(QDialog):
         layout_wrap.addWidget(container)
 
         container.setStyleSheet(
-            ".GlassFrame { background-color: rgba(20, 30, 40, 220); border: 1px solid rgba(255,255,255,50); border-radius: 20px; }")
+            ".GlassFrame { background-color: rgba(20, 30, 40, 230); border: 1px solid rgba(255,255,255,50); border-radius: 20px; }")
 
         layout = QVBoxLayout(container)
         layout.setContentsMargins(30, 30, 30, 30)
@@ -236,9 +261,27 @@ class DetailModal(QDialog):
         header = QHBoxLayout()
         header.addStretch()
         header.addWidget(close_btn)
+        layout.addLayout(header)
+
+        img_label = QLabel()
+        img_label.setFixedSize(390, 220)
+        img_label.setAlignment(Qt.AlignCenter)
+        img_label.setStyleSheet("background-color: rgba(0,0,0,0.3); border-radius: 10px;")
+
+        img_path = get_plant_image(plant.id)
+
+        if img_path:
+            pix = QPixmap(img_path)
+            if not pix.isNull():
+                scaled = pix.scaled(img_label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                img_label.setPixmap(scaled)
+
+        layout.addWidget(img_label, alignment=Qt.AlignCenter)
+        layout.addSpacing(15)
 
         name = QLabel(plant.name)
         name.setStyleSheet("font-size: 28px; font-weight: bold; color: white; margin-bottom: 5px;")
+        name.setWordWrap(True)
 
         sci = QLabel(plant.scientific_name)
         sci.setStyleSheet("font-size: 16px; font-style: italic; color: #aaa; margin-bottom: 15px;")
