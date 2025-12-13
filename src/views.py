@@ -384,7 +384,8 @@ class BaseTab(QWidget):
         self.scroll.setWidgetResizable(True)
         self.content_widget = QWidget()
 
-        self.flow_layout = FlowLayout(self.content_widget)
+        # Don't set layout here - let subclasses do it
+        self.flow_layout = None
 
         self.scroll.setWidget(self.content_widget)
         self.layout.addWidget(self.scroll)
@@ -412,13 +413,8 @@ class BaseTab(QWidget):
         self.status_label.setText(f"Found {len(plants)} plants.")
 
     def _clear_layout(self):
-        if self.content_widget.layout():
-            layout = self.content_widget.layout()
-            while layout.count():
-                item = layout.takeAt(0)
-                if item.widget():
-                    item.widget().setParent(None)
-                    item.widget().deleteLater()
+        # To be overridden by subclasses
+        pass
 
     def open_detail(self, plant, card_widget):
         main_window = self.window()
@@ -443,7 +439,7 @@ class HomeTab(BaseTab):
 
         self.search_bar.setPlaceholderText("Search top recommendations...")
 
-        QWidget().setLayout(self.flow_layout)
+        # Create list layout for HomeTab
         self.list_layout = QVBoxLayout(self.content_widget)
         self.list_layout.setAlignment(Qt.AlignTop)
         self.list_layout.setSpacing(10)
@@ -462,11 +458,7 @@ class HomeTab(BaseTab):
         self.populate_leaderboard(results)
 
     def populate_leaderboard(self, plants):
-        while self.list_layout.count():
-            item = self.list_layout.takeAt(0)
-            if item.widget():
-                item.widget().setParent(None)
-                item.widget().deleteLater()
+        self._clear_layout()
 
         for idx, p in enumerate(plants):
             row = RankedPlantRow(p, rank=idx + 1)
@@ -478,10 +470,23 @@ class HomeTab(BaseTab):
     def populate_grid(self, plants):
         self.populate_leaderboard(plants)
 
+    def _clear_layout(self):
+        # Clear the list layout
+        while self.list_layout.count():
+            item = self.list_layout.takeAt(0)
+            if item.widget():
+                widget = item.widget()
+                widget.setParent(None)
+                widget.deleteLater()
+
 
 class ListTab(BaseTab):
     def __init__(self, data_manager):
         super().__init__(data_manager)
+
+        # Create flow layout for ListTab
+        self.flow_layout = FlowLayout(self.content_widget)
+
         self.search_bar.setPlaceholderText("Search library...")
         QTimer.singleShot(100, self.perform_search)
 
@@ -489,3 +494,12 @@ class ListTab(BaseTab):
         text = self.search_bar.text()
         results = self.dm.search_all(text)
         self.populate_grid(results)
+
+    def _clear_layout(self):
+        # Clear the flow layout
+        while self.flow_layout.count():
+            item = self.flow_layout.takeAt(0)
+            if item.widget():
+                widget = item.widget()
+                widget.setParent(None)
+                widget.deleteLater()
